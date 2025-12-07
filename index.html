@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotógrafo Profesional | Portafolio y Servicios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#inicio">
+                    <i class="fas fa-camera-retro"></i>
+                    <span>PhotoNova Studio</span>
+                </a>
+            </div>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#portafolio" class="nav-link dropdown-toggle">Portafolio <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#invierno" class="nav-link-sub">Invierno</a></li>
+                        <li><a href="#otono" class="nav-link-sub">Otoño</a></li>
+                        <li><a href="#primavera" class="nav-link-sub">Primavera</a></li>
+                        <li><a href="#verano" class="nav-link-sub">Verano</a></li>
+                    </ul>
+                </li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li> 
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <div class="navbar-actions">
+                <button class="btn">Cotizar Proyecto</button>
+            </div>
+
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="inicio" class="section section-hero">
+            <div class="section-content">
+                <h1>Capturando el Arte de la Luz</h1>
+                <p>Fotografía de retrato, eventos y paisaje con una visión única y profesional. ¿Listo para inmortalizar tu momento?</p>
+                <a href="#portafolio" class="btn">Ver Mi Trabajo</a>
+            </div>
+        </section>
+
+        <section id="portafolio" class="section">
+            <div class="container">
+                <h2 class="section-title">Categorías</h2>
+                
+                <section id="invierno" class="portfolio-category">
+                    <h3 class="category-title">Invierno</h3>
+                    <div class="gallery">
+                        <div class="gallery-item"><img src="paisajes/iv1.jpeg" alt="Fotografía de Invierno 1"><div class="overlay"><h3>Nieve y Hielo</h3><p>Invierno</p></div></div>
+                        <div class="gallery-item featured"><img src="paisajes/iv2.avif" alt="Fotografía de Invierno 2"><div class="overlay"><h3>Bosque Congelado</h3><p>Invierno</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/iv3.jpg" alt="Fotografía de Invierno 3"><div class="overlay"><h3>Caminos Blancos</h3><p>Invierno</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/iv4.jpg" alt="Fotografía de Invierno 4"><div class="overlay"><h3>Auroras Boreales</h3><p>Invierno</p></div></div>
+                    </div>
+                </section>
+                
+                <section id="otono" class="portfolio-category">
+                    <h3 class="category-title">Otoño</h3>
+                    <div class="gallery">
+                        <div class="gallery-item"><img src="paisajes/ot1.webp" alt="Fotografía de Otoño 1"><div class="overlay"><h3>Colores Rojos</h3><p>Otoño</p></div></div>
+                        <div class="gallery-item featured"><img src="paisajes/ot2.jpg" alt="Fotografía de Otoño 2"><div class="overlay"><h3>Lago Sereno</h3><p>Otoño</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/ot3.jpg" alt="Fotografía de Otoño 3"><div class="overlay"><h3>Sendero</h3><p>Otoño</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/ot4.jpg" alt="Fotografía de Otoño 4"><div class="overlay"><h3>Cabaña</h3><p>Otoño</p></div></div>
+                    </div>
+                </section>
+                
+                <section id="primavera" class="portfolio-category">
+                    <h3 class="category-title">Primavera</h3>
+                    <div class="gallery">
+                        <div class="gallery-item"><img src="paisajes/pr1.avif" alt="Fotografía de Primavera 1"><div class="overlay"><h3>Flores Azules</h3><p>Primavera</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/pr2.jpg" alt="Fotografía de Primavera 2"><div class="overlay"><h3>Campos Verdes</h3><p>Primavera</p></div></div>
+                        <div class="gallery-item featured"><img src="paisajes/pr3.jpg" alt="Fotografía de Primavera 3"><div class="overlay"><h3>Tulipanes</h3><p>Primavera</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/pr4.webp" alt="Fotografía de Primavera 4"><div class="overlay"><h3>Mariposas</h3><p>Primavera</p></div></div>
+                    </div>
+                </section>
+                
+                <section id="verano" class="portfolio-category">
+                    <h3 class="category-title">Verano</h3>
+                    <div class="gallery">
+                        <div class="gallery-item featured"><img src="paisajes/vr1.jpg" alt="Fotografía de Verano 1"><div class="overlay"><h3>Playa Tropical</h3><p>Verano</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/vr2.jpeg" alt="Fotografía de Verano 2"><div class="overlay"><h3>Atardecer en la Playa</h3><p>Verano</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/vr3.jpg" alt="Fotografía de Verano 3"><div class="overlay"><h3>Palmeras</h3><p>Verano</p></div></div>
+                        <div class="gallery-item"><img src="paisajes/vr4.jpg" alt="Fotografía de Verano 4"><div class="overlay"><h3>Bote en la Costa</h3><p>Verano</p></div></div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+        <section id="servicios" class="section" style="background-color: var(--color-card-bg);">
+            <div class="section-content">
+                <h2 class="section-title">Mis Servicios</h2>
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <i class="fas fa-user-circle fa-2x" style="color: var(--color-primary);"></i>
+                        <h3>Retratos Personales</h3>
+                        <p>Sesiones individuales en exteriores o estudio, con 10 fotos finales retocadas.</p>
+                        <p style="margin-top: 10px; font-weight: 700; color: var(--color-secondary);">Desde $150 USD</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-city fa-2x" style="color: var(--color-primary);"></i>
+                        <h3>Comercial y Producto</h3>
+                        <p>Fotografía para catálogos, e-commerce y uso publicitario. Entrega en alta resolución.</p>
+                        <p style="margin-top: 10px; font-weight: 700; color: var(--color-secondary);">Cotización Personalizada</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-heart fa-2x" style="color: var(--color-primary);"></i>
+                        <h3>Bodas y Eventos</h3>
+                        <p>Cobertura completa, desde la preparación hasta el final de la fiesta. Álbum digital incluido.</p>
+                        <p style="margin-top: 10px; font-weight: 700; color: var(--color-secondary);">Paquetes Desde $800 USD</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section">
+            <div class="container" style="text-align: left;">
+                <h2 class="section-title" style="text-align: center;">Mi Filosofía</h2>
+                <div class="section-content">
+                    <img src="FT-Perfil.jpg" alt="Foto del Fotógrafo" class="about-me-photo">
+                    <div>
+                        <p>Soy Fernando Lopez Añez, y mi trabajo consiste en contar historias a través de la luz y la composición. Mi pasión por la fotografía comenzó en 2018, y desde entonces he buscado la perfección en cada fografia.</p>
+                        <p style="margin-top: 1rem;">Mi experiencia abarca las áreas: Retrato, Paisaje, Eventos y mas. Creo firmemente que la mejor fotografía es aquella que evoca una emoción y congela el tiempo, manteniendo la naturalidad y la autenticidad.</p>
+                        <p style="margin-top: 1rem; color: var(--color-primary); font-weight: 700;">¡Trabajemos juntos para crear tu próxima obra maestra visual!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacto" class="section" style="background-color: var(--color-card-bg); padding-bottom: 4rem;">
+            <div class="section-content">
+                <h2 class="section-title">Conversemos</h2>
+                <p>Estoy disponible para proyectos en la ciudad de Santa Cruz-Bolivia. Mándame un mensaje directo para cotizar tu idea.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:tuemail@dominio.com" class="btn" style="background: var(--color-secondary); border-color: var(--color-secondary); color: white; padding: 1rem 2.5rem; font-size: 1.1rem; text-decoration: none; margin-right: 1rem;">
+                        <i class="fas fa-envelope"></i> Enviar Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 PhotoNova Studio. Fotografía con pasión y visión. | Diseñado para ser 100% Responsive.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

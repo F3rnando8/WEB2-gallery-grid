@@ -1,0 +1,550 @@
+/* =====================================
+   PALETA DE COLORES INTENSA (Índigo y Turquesa Vibrante)
+   ===================================== */
+:root {
+    --color-light-bg: #f7f9fc;      /* Fondo Principal (Gris Azulado Suave) */
+    --color-card-bg: #ffffff;       /* Fondo de Navbar y Cards */
+    --color-primary: #6b46c1;       /* ⭐ Púrpura Índigo Profundo (Color Principal) */
+    --color-secondary: #06b6d4;     /* ⭐ Turquesa Vibrante (Acento Secundario) */
+    --color-text-dark: #1f2937;     /* Texto Principal (Gris más Oscuro) */
+    --color-text-light: #6b7280;    /* Texto Secundario (Gris Medio) */
+    --color-border: #e5e7eb;        /* Borde Suave */
+    --color-shadow: rgba(107, 70, 193, 0.25); /* ⭐ Sombra basada en el nuevo color primario */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-light-bg); 
+    color: var(--color-text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==============================
+   NAVBAR (Diseño Limpio con Sombra)
+   ============================== */
+.navbar {
+    background: var(--color-card-bg); 
+    /* ⭐ Sombra de navbar mejorada y más notable */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.navbar-container {
+    max-width: 1300px; 
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px; 
+}
+
+.navbar-logo a {
+    color: var(--color-primary); 
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 auto 0 2rem; 
+    font-weight: 500;
+}
+
+.navbar-menu li a {
+    color: var(--color-text-dark); 
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
+    font-size: 0.95rem;
+}
+
+/* ⭐ Estilos de Selección y Hover Mejorados */
+.navbar-menu li a:hover {
+    color: var(--color-primary);
+    background: rgba(107, 70, 193, 0.1); /* Fondo más claro del color primario */
+}
+
+.navbar-menu li a.active {
+    color: var(--color-primary);
+    font-weight: 700;
+    /* ⭐ Línea de fondo sutil para el enlace activo */
+    box-shadow: inset 0 -3px 0 0 var(--color-primary);
+}
+
+/* ⭐ Botones con estilo 3D y Hover */
+.navbar-actions .btn {
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-card-bg);
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600; 
+    transition: var(--transition);
+    /* ⭐ Sombra ligera para pop-up */
+    box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.navbar-actions .btn:hover {
+    background: var(--color-secondary); /* Cambio de color al hacer hover */
+    border-color: var(--color-secondary);
+    color: var(--color-card-bg);
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(6, 182, 212, 0.3); /* Sombra con el color secundario */
+}
+
+/* Botón Hamburguesa */
+.navbar-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.navbar-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--color-text-dark);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.navbar-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.navbar-toggle.active span:nth-child(2) { opacity: 0; }
+.navbar-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* =====================================
+   DROPDOWN EN NAVBAR
+   ===================================== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle i {
+    font-size: 0.7em;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Estado al pasar el mouse (hover) en desktop */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    /* ⭐ Sombra del dropdown más definida */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    min-width: 150px;
+    z-index: 900;
+    /* Ocultar por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    padding: 0.5rem 0;
+}
+
+.dropdown-menu li a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.dropdown-menu li a:hover {
+    background: var(--color-light-bg);
+    color: var(--color-secondary); /* ⭐ Hover con color secundario */
+}
+
+
+/* ==============================
+   SECCIONES Y LAYOUTS
+   ============================== */
+
+.section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* ⭐ CORRECCIÓN CLAVE 1: Añade padding lateral para prevenir el corte en móviles (Hero, Sobre Mí, Conversemos) */
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800; /* ⭐ Títulos más audaces */
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    /* ⭐ Sombra de texto suave */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+/* Hero Section */
+.section-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(247, 249, 252, 0.85), rgba(247, 249, 252, 0.95)), url('fondo-fotografia-suave.jpg') no-repeat center center/cover;
+    color: var(--color-text-dark);
+}
+
+.section-hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+/* =====================================
+   PORTAFOLIO (Gallery Grid - Responsive)
+   ===================================== */
+
+/* Estilo para las secciones de temporada */
+.portfolio-category {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.gallery {
+    /* CSS GRID CON AUTO-FIT (Mantiene la responsividad) */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px; /* ⭐ Bordes más suaves */
+    overflow: hidden;
+    cursor: pointer;
+    /* ⭐ Sombra sutil para las cards */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    /* ⭐ Sombra de hover más pronunciada */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay de la imagen */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(31, 41, 55, 0.9) 0%, transparent 100%); /* ⭐ Fondo más oscuro */
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-secondary); 
+}
+
+/* Item Destacado (Ocupa dos columnas en desktop) */
+.gallery-item.featured {
+    grid-column: span 2;
+    aspect-ratio: 2.1 / 1; 
+}
+
+/* =====================================
+   SECCIÓN SERVICIOS (Minimalista y Claro)
+   ===================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--color-card-bg); 
+    border: 1px solid var(--color-border);
+    /* ⭐ CORRECCIÓN CLAVE 2: Aumentar el padding horizontal a 2rem para prevenir el recorte. */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    transition: var(--transition);
+    text-align: left;
+    height: 100%;
+    /* ⭐ Sombra más pronunciada en tarjetas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
+    color: var(--color-text-dark); 
+}
+
+.service-card i {
+    margin-bottom: 0.75rem; 
+    display: block; 
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    /* ⭐ Efecto de sombra al hacer hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+    /* ⭐ Borde inferior de acento en hover */
+    border-bottom: 5px solid var(--color-primary); 
+    border-left: 1px solid var(--color-border); /* Evitar conflicto con el borde de abajo */
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+/* =====================================
+   SECCIÓN SOBRE MÍ (AJUSTE DE FOTO CIRCULAR)
+   ===================================== */
+#sobre-mi .section-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Alineación vertical central por defecto */
+    text-align: left; /* Asegura que el texto dentro del div se alinee a la izquierda */
+}
+
+.about-me-photo {
+    width: 200px; /* Tamaño más pequeño para que se ajuste al texto */
+    height: 200px;
+    border-radius: 50%; /* Forma circular */
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que la foto se encoja */
+    /* ⭐ Borde de acento más grueso */
+    border: 6px solid var(--color-primary); 
+    /* ⭐ Sombra que da profundidad */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================================
+   RESPONSIVE (Ajustes para Móviles)
+   ===================================== */
+@media (max-width: 992px) {
+    
+    .navbar-toggle { display: flex; }
+    
+    .navbar-menu, .navbar-actions {
+        position: fixed;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--color-card-bg); 
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transform: translateX(-100%); 
+        overflow-y: auto;
+        /* Reaplicar transición */
+        transition: transform 0.4s ease; 
+    }
+    
+    .navbar-actions {
+        top: auto; 
+        bottom: 0;
+        border-top: 1px solid var(--color-border);
+        height: 80px;
+        padding: 1rem 0;
+    }
+
+    .navbar-menu.active, .navbar-actions.active {
+        transform: translateX(0); 
+        display: flex;
+    }
+    
+    .navbar-menu li { width: 90%; text-align: center; }
+    
+    /* ⭐ Enlaces del menú móvil mejorados */
+    .navbar-menu li a {
+        width: 100%;
+        padding: 1rem;
+        color: var(--color-text-dark); 
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .navbar-menu li a.active {
+        /* ⭐ Fondo suave para la selección en móvil */
+        background: rgba(107, 70, 193, 0.08); 
+        font-weight: 700;
+        box-shadow: none; /* Quitar sombra de línea */
+    }
+    
+    /* Mobile Dropdown styles (Acordeón) */
+    .dropdown {
+        width: 90%; 
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .dropdown-toggle {
+        border-bottom: none !important; 
+    }
+
+    .dropdown .dropdown-menu {
+        position: static; 
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        opacity: 1; 
+        visibility: visible;
+        transform: none;
+        height: 0; /* Controlado por JS */
+        overflow: hidden;
+        padding: 0;
+        transition: height 0.4s ease-in-out;
+        background: var(--color-light-bg);
+    }
+
+    .dropdown.active .dropdown-menu {
+        padding: 0.5rem 0;
+    }
+
+    /* Rotar el icono en móvil cuando está activo */
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-menu li a {
+        padding: 0.75rem 1rem; 
+        background: var(--color-card-bg);
+        margin: 0.2rem auto;
+        width: 90%;
+        border-radius: 6px;
+        text-align: center;
+        border-bottom: none;
+    }
+    
+    /* El ítem destacado ocupa solo 1 columna en tablet/móvil */
+    .gallery-item.featured {
+        grid-column: span 1;
+        aspect-ratio: 1 / 1.1; 
+    }
+    
+    /* Servicios de 3 columnas a 2 columnas */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* AJUSTE RESPONSIVE: SOBRE MÍ */
+    @media (max-width: 768px) {
+        #sobre-mi .section-content {
+            flex-direction: column; /* Apila la foto y el texto verticalmente */
+            align-items: center; /* Centra la foto */
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    /* ⭐ CORRECCIÓN CLAVE 3: Reducir el tamaño de la fuente del título Hero */
+    .section-hero h1 {
+        font-size: 2rem; /* Reducido para mayor seguridad en el Hero */
+    }
+
+    /* ⭐ CORRECCIÓN CLAVE 4: Reducir el tamaño de la fuente de los títulos de tarjeta */
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Servicios a 1 columna en móviles pequeños */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .navbar-actions {
+        flex-direction: column;
+        height: 120px;
+    }
+    .navbar-menu.active {
+        height: calc(100vh - 190px); 
+    }
+}
